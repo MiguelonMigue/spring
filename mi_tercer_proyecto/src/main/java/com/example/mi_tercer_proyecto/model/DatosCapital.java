@@ -1,4 +1,13 @@
 package com.example.mi_tercer_proyecto.model;
 
-public record DatosCapital() {
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record DatosCapital(
+        @JsonAlias("name")String nombre,
+        Integer id,
+        @JsonAlias("population")Integer poblacion
+){
+
 }
